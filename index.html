@@ -7439,7 +7439,7 @@ main {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Abschlussproket">Abschlussproket<a class="anchor-link" href="#Abschlussproket">¶</a></h2><h1 id="Einf%C3%BChrung-in-Python-f%C3%BCr-Data-Analytics">Einführung in Python für Data Analytics<a class="anchor-link" href="#Einf%C3%BChrung-in-Python-f%C3%BCr-Data-Analytics">¶</a></h1><h3 id="Dozent:-Dr.-Alessandro-Bramucci">Dozent: Dr. Alessandro Bramucci<a class="anchor-link" href="#Dozent:-Dr.-Alessandro-Bramucci">¶</a></h3><h3 id="Bearbeitung-und-Pr%C3%A4sentation:-Jonathan-Willrich,-Gregor-Henning,-Sebastian-Knoche">Bearbeitung und Präsentation: Jonathan Willrich, Gregor Henning, Sebastian Knoche<a class="anchor-link" href="#Bearbeitung-und-Pr%C3%A4sentation:-Jonathan-Willrich,-Gregor-Henning,-Sebastian-Knoche">¶</a></h3>
+<h1 id="Einf%C3%BChrung-in-Python-f%C3%BCr-Data-Analytics">Einführung in Python für Data Analytics<a class="anchor-link" href="#Einf%C3%BChrung-in-Python-f%C3%BCr-Data-Analytics">¶</a></h1><h2 id="Abschlussproket">Abschlussproket<a class="anchor-link" href="#Abschlussproket">¶</a></h2><h3 id="Dozent:-Dr.-Alessandro-Bramucci">Dozent: Dr. Alessandro Bramucci<a class="anchor-link" href="#Dozent:-Dr.-Alessandro-Bramucci">¶</a></h3><h3 id="Bearbeitung-und-Pr%C3%A4sentation:">Bearbeitung und Präsentation:<a class="anchor-link" href="#Bearbeitung-und-Pr%C3%A4sentation:">¶</a></h3><h3 id="Jonathan-Willrich,-Gregor-Henning,-Sebastian-Knoche">Jonathan Willrich, Gregor Henning, Sebastian Knoche<a class="anchor-link" href="#Jonathan-Willrich,-Gregor-Henning,-Sebastian-Knoche">¶</a></h3>
 </div>
 </div>
 </div>
@@ -7449,7 +7449,7 @@ main {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Import-data">Import data<a class="anchor-link" href="#Import-data">¶</a></h2>
+<h2 id="Importieren-der-Daten">Importieren der Daten<a class="anchor-link" href="#Importieren-der-Daten">¶</a></h2>
 </div>
 </div>
 </div>
@@ -7478,7 +7478,7 @@ main {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Cleaning-data">Cleaning data<a class="anchor-link" href="#Cleaning-data">¶</a></h2>
+<h2 id="Bereinigen-der-Daten">Bereinigen der Daten<a class="anchor-link" href="#Bereinigen-der-Daten">¶</a></h2>
 </div>
 </div>
 </div>
@@ -7488,7 +7488,7 @@ main {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h4 id="Analysis-for-df_besucher">Analysis for df_besucher<a class="anchor-link" href="#Analysis-for-df_besucher">¶</a></h4>
+<h3 id="Analyse-von-df_besucher">Analyse von df_besucher<a class="anchor-link" href="#Analyse-von-df_besucher">¶</a></h3>
 </div>
 </div>
 </div>
@@ -7612,17 +7612,37 @@ dtype: object</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h4 id="Data-modelation-is-not-needed---df_besucher-is-in-good-shape">Data modelation is not needed - df_besucher is in good shape<a class="anchor-link" href="#Data-modelation-is-not-needed---df_besucher-is-in-good-shape">¶</a></h4>
+<h3 id="Datenmodelierung-f%C3%BCr-df_besucher">Datenmodelierung für df_besucher<a class="anchor-link" href="#Datenmodelierung-f%C3%BCr-df_besucher">¶</a></h3>
 </div>
 </div>
 </div>
-</div></section><section>
+</div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=05c3c06c-b082-4e11-abc5-c35233c7d00a">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<div class="highlight"><pre><span></span><span class="c1"># Um das spätere Zusammenführen zu erleichtern, sind folgende Anpassungen hilfreich:</span>
+
+<span class="c1"># Füge eine Spalte "Kunde" hinzu, die für Besucher 0 ist</span>
+<span class="n">df_besucher</span><span class="p">[</span><span class="s1">'Kunde'</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="c1"># Füge die Spalte "Preis" hinzu und setze die Werte auf 0</span>
+<span class="n">df_besucher</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s1">'Preis'</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+<span class="c1"># Füge die Spalte "Ausreißer" in df_besucher hinzu und setze die Werte auf False</span>
+<span class="n">df_besucher</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="s1">'Ausreißer'</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div></div></section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=aa6c5f48-b682-4e3a-adec-04223e3f2339">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h4 id="Analysis-for-df_geo">Analysis for df_geo<a class="anchor-link" href="#Analysis-for-df_geo">¶</a></h4>
+<h3 id="Analyse-von-df_geo">Analyse von df_geo<a class="anchor-link" href="#Analyse-von-df_geo">¶</a></h3>
 </div>
 </div>
 </div>
@@ -7722,7 +7742,7 @@ dtype: object</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h4 id="Data-modelation-for-df_geo">Data modelation for df_geo<a class="anchor-link" href="#Data-modelation-for-df_geo">¶</a></h4>
+<h3 id="Datenmodelierung-f%C3%BCr-df_geo">Datenmodelierung für df_geo<a class="anchor-link" href="#Datenmodelierung-f%C3%BCr-df_geo">¶</a></h3>
 </div>
 </div>
 </div>
@@ -7732,10 +7752,11 @@ dtype: object</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<div class="highlight"><pre><span></span><span class="c1"># Replace all instances of "NRW" in the column "Niederlassung" with "Nordrhein-Westfalen"</span>
+<div class="highlight"><pre><span></span><span class="c1"># Ersetze alle Instanzen von "NRW" in der Spalte "Niederlassung" mit "Nordrhein-Westfalen"</span>
 <span class="n">df_geo</span><span class="p">[</span><span class="s1">'Niederlassung'</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_geo</span><span class="p">[</span><span class="s1">'Niederlassung'</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="s1">'Nordrhein-Westfalen'</span> <span class="k">if</span> <span class="s1">'NRW'</span> <span class="ow">in</span> <span class="n">x</span> <span class="k">else</span> <span class="n">x</span><span class="p">)</span>
-<span class="c1"># Replace all entries containing "Berlin" in the column "Niederlassung" with "Berlin"</span>
-<span class="n">df_geo</span><span class="p">[</span><span class="s1">'Niederlassung'</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_geo</span><span class="p">[</span><span class="s1">'Niederlassung'</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="s1">'Berlin'</span> <span class="k">if</span> <span class="s1">'Berlin'</span> <span class="ow">in</span> <span class="n">x</span> <span class="k">else</span> <span class="n">x</span><span class="p">)</span>
+
+<span class="c1"># Ersetze alle Einträge, die "Berlin" in der Spalte "Niederlassung" enthalten, mit "Berlin"</span>
+<span class="n">df_geo</span><span class="p">[</span><span class="s1">'Niederlassung'</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_geo</span><span class="p">[</span><span class="s1">'Niederlassung'</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="s1">'Berlin'</span> <span class="k">if</span> <span class="s1">'berlin'</span> <span class="ow">in</span> <span class="n">x</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="k">else</span> <span class="n">x</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -7746,7 +7767,7 @@ dtype: object</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h4 id="Analysis-for-df_kunden">Analysis for df_kunden<a class="anchor-link" href="#Analysis-for-df_kunden">¶</a></h4>
+<h3 id="Analyse-von-df_kunden">Analyse von df_kunden<a class="anchor-link" href="#Analyse-von-df_kunden">¶</a></h3>
 </div>
 </div>
 </div>
@@ -7878,7 +7899,7 @@ dtype: object</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h4 id="Data-modelation-for-df_kunden">Data modelation for df_kunden<a class="anchor-link" href="#Data-modelation-for-df_kunden">¶</a></h4>
+<h3 id="Datenmodelierung-f%C3%BCr-df_kunden">Datenmodelierung für df_kunden<a class="anchor-link" href="#Datenmodelierung-f%C3%BCr-df_kunden">¶</a></h3>
 </div>
 </div>
 </div>
@@ -7888,7 +7909,7 @@ dtype: object</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<div class="highlight"><pre><span></span><span class="c1"># Find the mode for the values in the column "Geschlecht"</span>
+<div class="highlight"><pre><span></span><span class="c1"># Berechne den Modus für die Werte in der Spalte "Geschlecht"</span>
 <span class="n">geschlecht_mode</span> <span class="o">=</span> <span class="n">df_kunden</span><span class="p">[</span><span class="s1">'Geschlecht'</span><span class="p">]</span><span class="o">.</span><span class="n">mode</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
 </pre></div>
 </div>
@@ -7901,7 +7922,7 @@ dtype: object</pre>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child">
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>The mode is 1.0
+<pre>Der Modus ist 1.0
 </pre>
 </div>
 </div>
@@ -7913,10 +7934,23 @@ dtype: object</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<div class="highlight"><pre><span></span><span class="c1"># Replace all empty entries in the column "Geschlecht" with the mode of the values in the column "Geschlecht" </span>
-<span class="n">df_kunden</span><span class="p">[</span><span class="s1">'Geschlecht'</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">geschlecht_mode</span><span class="p">,</span> <span class="n">inplace</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
-<span class="c1"># Convert column "Geschlecht" to the more propper integer date type</span>
+<div class="highlight"><pre><span></span><span class="c1"># Ersetze alle leeren Einträge in der Spalte "Geschlecht" mit dem Modus der Werte in der Spalte "Geschlecht"</span>
+<span class="n">df_kunden</span><span class="p">[</span><span class="s1">'Geschlecht'</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">geschlecht_mode</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Konvertiere die Spalte "Geschlecht" in den entsprechenden Integer-Datentyp</span>
 <span class="n">df_kunden</span><span class="p">[</span><span class="s1">'Geschlecht'</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_kunden</span><span class="p">[</span><span class="s1">'Geschlecht'</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=cdf42db0-f7a9-4c5a-b80b-b42ca123dbff">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<div class="highlight"><pre><span></span><span class="c1"># Füge eine Spalte "Kunde" hinzu, die für Kunden 1 ist</span>
+<span class="n">df_kunden</span><span class="p">[</span><span class="s1">'Kunde'</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
 </pre></div>
 </div>
 </div>
@@ -7927,7 +7961,7 @@ dtype: object</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h4 id="Further-data-modeling-for-df_kunden,-to-remove-extreme-values">Further data modeling for df_kunden, to remove extreme values<a class="anchor-link" href="#Further-data-modeling-for-df_kunden,-to-remove-extreme-values">¶</a></h4>
+<h3 id="Weitere-Datenmodelierung-f%C3%BCr-df_kunden,-um-Ausrei%C3%9Fer-zu-entfernen">Weitere Datenmodelierung für df_kunden, um Ausreißer zu entfernen<a class="anchor-link" href="#Weitere-Datenmodelierung-f%C3%BCr-df_kunden,-um-Ausrei%C3%9Fer-zu-entfernen">¶</a></h3>
 </div>
 </div>
 </div>
@@ -7947,7 +7981,7 @@ dtype: object</pre>
 <span class="n">obere_grenze</span> <span class="o">=</span> <span class="n">Q3</span> <span class="o">+</span> <span class="mf">1.5</span> <span class="o">*</span> <span class="n">IQR</span>
 
 <span class="c1"># Identifizierung von Ausreißern</span>
-<span class="n">df_kunden</span><span class="p">[</span><span class="s1">'Ausreißer'</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">df_kunden</span><span class="p">[</span><span class="s1">'Einkommen'</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">untere_grenze</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">df_kunden</span><span class="p">[</span><span class="s1">'Einkommen'</span><span class="p">])</span>
+<span class="n">df_kunden</span><span class="p">[</span><span class="s1">'Ausreißer'</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">df_kunden</span><span class="p">[</span><span class="s1">'Einkommen'</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">untere_grenze</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">df_kunden</span><span class="p">[</span><span class="s1">'Einkommen'</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">obere_grenze</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -7958,7 +7992,7 @@ dtype: object</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<div class="highlight"><pre><span></span><span class="c1"># Calculate the median for the values in the column "Einkommen"</span>
+<div class="highlight"><pre><span></span><span class="c1"># Berechne den Median für die Werte in der Spalte "Einkommen"</span>
 <span class="n">eink_medianwert</span> <span class="o">=</span> <span class="n">df_kunden</span><span class="p">[</span><span class="s1">'Einkommen'</span><span class="p">]</span><span class="o">.</span><span class="n">median</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -7971,7 +8005,7 @@ dtype: object</pre>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child">
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>The median is 59013.0
+<pre>Der Median ist 59013.0
 </pre>
 </div>
 </div>
@@ -7983,12 +8017,332 @@ dtype: object</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<div class="highlight"><pre><span></span><span class="c1"># Replace extreme values with the median of the column "Einkommen"</span>
+<div class="highlight"><pre><span></span><span class="c1"># Ersetze extreme Werte mit dem Median der Spalte "Einkommen"</span>
 <span class="n">df_kunden</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df_kunden</span><span class="p">[</span><span class="s1">'Ausreißer'</span><span class="p">]</span> <span class="o">==</span> <span class="kc">True</span><span class="p">,</span> <span class="s1">'Einkommen'</span><span class="p">]</span> <span class="o">=</span> <span class="n">eink_medianwert</span>
 </pre></div>
 </div>
 </div>
 </div>
+</div></div></section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=19701dd7-66f3-4cde-8e71-772ebdcf0de9">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Zusammenf%C3%BChren-von-df_besucher-und-df_geo">Zusammenführen von df_besucher und df_geo<a class="anchor-link" href="#Zusammenf%C3%BChren-von-df_besucher-und-df_geo">¶</a></h3>
+</div>
+</div>
+</div>
+</div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=19b79104-0dfa-4512-90ea-6fd5ff9e6751">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<div class="highlight"><pre><span></span><span class="c1"># Zusammenführen von df_besucher und df_geo basierend auf KundeNr</span>
+<span class="n">df_besucher_geo</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df_besucher</span><span class="p">,</span> <span class="n">df_geo</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">'KundeNr'</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">'left'</span><span class="p">)</span>
+
+<span class="c1"># Zusammenführen von df_kunden und df_geo basierend auf KundeNr</span>
+<span class="n">df_kunden_geo</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df_kunden</span><span class="p">,</span> <span class="n">df_geo</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">'KundeNr'</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">'left'</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=e09eba56-225c-4b65-bafe-933eeeb0899c">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<div class="highlight"><pre><span></span><span class="c1"># Zusammenführen von df_besucher_geo und df_kunden_geo</span>
+<span class="n">df_gesamt</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">df_besucher_geo</span><span class="p">,</span> <span class="n">df_kunden_geo</span><span class="p">],</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div></div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=c6653a5a-d391-4491-9377-8917ca4a4668">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Fragen">Fragen<a class="anchor-link" href="#Fragen">¶</a></h2>
+</div>
+</div>
+</div>
+</div></section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=bb48ef37-0389-454e-aeea-e5311fd33607">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="1.-Wie-viele-Autos-wurden-verkauft?">1. Wie viele Autos wurden verkauft?<a class="anchor-link" href="#1.-Wie-viele-Autos-wurden-verkauft?">¶</a></h3>
+</div>
+</div>
+</div>
+</div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=73018a8a-59eb-4f5d-ad1b-f0c6d4818600">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<div class="highlight"><pre><span></span><span class="c1"># Filtern der Verkäufe</span>
+<span class="n">df_verk</span> <span class="o">=</span> <span class="n">df_gesamt</span><span class="p">[</span><span class="n">df_gesamt</span><span class="p">[</span><span class="s1">'Kunde'</span><span class="p">]</span> <span class="o">==</span> <span class="kc">True</span><span class="p">]</span>
+
+<span class="c1"># Anzahl der Verkäufe ermitteln</span>
+<span class="n">anzahl_verk</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">df_verk</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div></div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noInput" id="cell-id=403079fa-8d4b-459a-92fd-deac11fd3036">
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Anzahl der verkauften Autos: 1104
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div></div></section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=e1d520eb-5956-4411-9a5c-254e03608b50">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="2.-Was-ist-der-H%C3%B6chst-,-Mindest--und-Durchschnittspreis-der-verkauften-Autos?">2. Was ist der Höchst-, Mindest- und Durchschnittspreis der verkauften Autos?<a class="anchor-link" href="#2.-Was-ist-der-H%C3%B6chst-,-Mindest--und-Durchschnittspreis-der-verkauften-Autos?">¶</a></h3>
+</div>
+</div>
+</div>
+</div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=43e880ef-1dbc-48eb-8e47-5719c4e1d0bc">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<div class="highlight"><pre><span></span><span class="c1"># Höchster Verkaufspreis</span>
+<span class="n">max_preis</span> <span class="o">=</span> <span class="n">df_verk</span><span class="p">[</span><span class="s1">'Preis'</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+
+<span class="c1"># Niedrigster Verkaufspreis</span>
+<span class="n">min_preis</span> <span class="o">=</span> <span class="n">df_verk</span><span class="p">[</span><span class="s1">'Preis'</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+
+<span class="c1"># Durchschnittspreis</span>
+<span class="n">mittel_preis</span> <span class="o">=</span> <span class="n">df_verk</span><span class="p">[</span><span class="s1">'Preis'</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div></div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noInput" id="cell-id=3a2256bb-100a-4154-80f5-67d8b27f8858">
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Höchster Verkaufspreis:    165482.31 €
+Niedrigster Verkaufspreis: 21471.65 €
+Durchschnittspreis:        88975.2 €
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div></div></section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=9c689aa1-c830-47a3-b996-d1f80a479eb9">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="3.-Wie-hoch-war-der-Gesamtumsatz?">3. Wie hoch war der Gesamtumsatz?<a class="anchor-link" href="#3.-Wie-hoch-war-der-Gesamtumsatz?">¶</a></h3>
+</div>
+</div>
+</div>
+</div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=59218091-7c1b-453f-ae07-c9e0c27ed3b8">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<div class="highlight"><pre><span></span><span class="c1"># Gesamtumsatz</span>
+<span class="n">gesamtumsatz</span> <span class="o">=</span> <span class="n">df_verk</span><span class="p">[</span><span class="s1">'Preis'</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div></div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noInput" id="cell-id=68d5d8ba-537e-4f27-ac11-f6b033130e8d">
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Gesamtumsatz:              98228619.38 €
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div></div></section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=9af0f6b8-c9d3-4f35-b3d9-55ac6edad185">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="4.-Wie-viele-Autos-wurden-pro-Bundesland-verkauft?">4. Wie viele Autos wurden pro Bundesland verkauft?<a class="anchor-link" href="#4.-Wie-viele-Autos-wurden-pro-Bundesland-verkauft?">¶</a></h3>
+</div>
+</div>
+</div>
+</div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=da164d76-2a18-480d-b5d0-9a480c5614ed">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<div class="highlight"><pre><span></span><span class="c1"># Liste der Bundesländer mit der Anzahl der Verkäufe</span>
+<span class="n">anzahl_verk_niederl</span> <span class="o">=</span> <span class="n">df_verk</span><span class="p">[</span><span class="s1">'Niederlassung'</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+
+<span class="c1"># Alphabetisch sortieren</span>
+<span class="n">anzahl_verk_niederl</span> <span class="o">=</span> <span class="n">anzahl_verk_niederl</span><span class="o">.</span><span class="n">sort_index</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div></div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noInput" id="cell-id=486c9674-c028-40e1-a785-2d3fab53a8f0">
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Anzahl der Verkäufe pro Bundesland:
+Niederlassung
+Baden-Württemberg      205
+Bayern                 188
+Berlin                 126
+Brandenburg             37
+Düsseldorf               1
+Hamburg                 43
+Hessen                  96
+Niedersachsen           96
+Nordrhein-Westfalen    174
+Sachsen                 89
+Thüringen               49
+Name: count, dtype: int64
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div></div></section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=66f98492-0f02-4194-8a0c-2f5c95761bb8">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="5.-Wie-hoch-war-der-durchschnittliche-Umsatz-pro-Bundesland?">5. Wie hoch war der durchschnittliche Umsatz pro Bundesland?<a class="anchor-link" href="#5.-Wie-hoch-war-der-durchschnittliche-Umsatz-pro-Bundesland?">¶</a></h3>
+</div>
+</div>
+</div>
+</div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=87f0f608-367f-43e0-961f-86a93289ae3a">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<div class="highlight"><pre><span></span><span class="c1"># Durchschnittlicher Umsatz pro Bundesland</span>
+<span class="n">umsatz_pro_niederl</span> <span class="o">=</span> <span class="n">df_verk</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">'Niederlassung'</span><span class="p">)[</span><span class="s1">'Preis'</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+
+<span class="c1"># Runden auf zwei Nachkommastellen</span>
+<span class="n">umsatz_pro_niederl</span> <span class="o">=</span> <span class="n">umsatz_pro_niederl</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div></div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noInput" id="cell-id=3a20d3fc-8fde-4e19-b8e6-b9e8a0a1fc7f">
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Durchschnittlicher Umsatz pro Niederlassung:
+Niederlassung
+Baden-Württemberg       90969.56
+Bayern                  89344.31
+Berlin                  89584.98
+Brandenburg             86673.64
+Düsseldorf             120215.50
+Hamburg                 85549.50
+Hessen                  85864.93
+Niedersachsen           87963.31
+Nordrhein-Westfalen     88451.76
+Sachsen                 89455.08
+Thüringen               90816.99
+Name: Preis, dtype: float64
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div></div></section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=63b58c5d-227c-4a2a-9b13-dd82ffdd2490">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="6.-In-welchem-Bundesland-wurde-das-teuerste-Auto-verkauft?">6. In welchem Bundesland wurde das teuerste Auto verkauft?<a class="anchor-link" href="#6.-In-welchem-Bundesland-wurde-das-teuerste-Auto-verkauft?">¶</a></h3>
+</div>
+</div>
+</div>
+</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput" id="cell-id=82fc7370-a4bc-428b-bc06-eb2983b5d56a">
+</div></div></section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=98229e30-1f93-4532-a296-67e9d122d32c">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="7.-Haben-mehr-Frauen-oder-mehr-M%C3%A4nner-unsere-Autos-gekauft?">7. Haben mehr Frauen oder mehr Männer unsere Autos gekauft?<a class="anchor-link" href="#7.-Haben-mehr-Frauen-oder-mehr-M%C3%A4nner-unsere-Autos-gekauft?">¶</a></h3>
+</div>
+</div>
+</div>
+</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput" id="cell-id=9492343e-716b-485c-8d27-022801376451">
+</div></div></section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=a99c59e8-bd73-4d3f-9645-83cec40c1d13">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="8.-Wie-hoch-ist-das-Durchschnittsalter-unserer-Kunden?-Wie-hoch-ist-das-Durchschnittsalter-unserer-Besucher?">8. Wie hoch ist das Durchschnittsalter unserer Kunden? Wie hoch ist das Durchschnittsalter unserer Besucher?<a class="anchor-link" href="#8.-Wie-hoch-ist-das-Durchschnittsalter-unserer-Kunden?-Wie-hoch-ist-das-Durchschnittsalter-unserer-Besucher?">¶</a></h3>
+</div>
+</div>
+</div>
+</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput" id="cell-id=ee032aa1-7a7b-4fa0-b01b-525e2f360d2b">
+</div></div></section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=e487320d-6977-4c15-97d4-e767fde6ddaa">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="9.-Wie-hoch-ist-das-Durchschnittseinkommen-unserer-Kunden?-Wie-hoch-ist-das-Durchschnittseinkommen-unserer-Besucher?">9. Wie hoch ist das Durchschnittseinkommen unserer Kunden? Wie hoch ist das Durchschnittseinkommen unserer Besucher?<a class="anchor-link" href="#9.-Wie-hoch-ist-das-Durchschnittseinkommen-unserer-Kunden?-Wie-hoch-ist-das-Durchschnittseinkommen-unserer-Besucher?">¶</a></h3>
+</div>
+</div>
+</div>
+</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput" id="cell-id=104ea698-3d44-4226-aae5-a160c7ec4344">
+</div></div></section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=307897f6-ccf6-4909-bf95-7eff13ad19e2">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="10.-Bestimmen-Sie,-ob-es-einen-statistisch-signifikanten-Unterschied-zwischen-dem-Durchschnittseinkommen-der-Kunden-und-dem-Durchschnittseinkommen-der-Besucher-gibt.">10. Bestimmen Sie, ob es einen statistisch signifikanten Unterschied zwischen dem Durchschnittseinkommen der Kunden und dem Durchschnittseinkommen der Besucher gibt.<a class="anchor-link" href="#10.-Bestimmen-Sie,-ob-es-einen-statistisch-signifikanten-Unterschied-zwischen-dem-Durchschnittseinkommen-der-Kunden-und-dem-Durchschnittseinkommen-der-Besucher-gibt.">¶</a></h3><h4 id="Sie-m%C3%BCssen-einen-Zweistichproben-t-Test-durchf%C3%BChren.-Beginnen-Sie-mit-der-Aufstellung-der-Null--und-Alternativhypothese.-Verwenden-Sie-ein-Signifikanzniveau-(%CE%B1)-von-5%25.-Nehmen-Sie-an,-dass-die-Varianzen-der-beiden-Gruppen-gleich-sind.">Sie müssen einen Zweistichproben-t-Test durchführen. Beginnen Sie mit der Aufstellung der Null- und Alternativhypothese. Verwenden Sie ein Signifikanzniveau (α) von 5%. Nehmen Sie an, dass die Varianzen der beiden Gruppen gleich sind.<a class="anchor-link" href="#Sie-m%C3%BCssen-einen-Zweistichproben-t-Test-durchf%C3%BChren.-Beginnen-Sie-mit-der-Aufstellung-der-Null--und-Alternativhypothese.-Verwenden-Sie-ein-Signifikanzniveau-(%CE%B1)-von-5%25.-Nehmen-Sie-an,-dass-die-Varianzen-der-beiden-Gruppen-gleich-sind.">¶</a></h4>
+</div>
+</div>
+</div>
+</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput" id="cell-id=e3134948-5522-46ed-bd5e-66a71d78ebe8">
 </div></div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=eb5c8d98-9906-4fa1-bf2c-48b8d94dd59e">
 <div class="jp-Cell-inputWrapper" tabindex="0">
@@ -7999,7 +8353,6 @@ dtype: object</pre>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput" id="cell-id=8efa2294-22e7-436f-8793-a7b25d49d9be">
 </div></section></section>
 </div>
 </div>
