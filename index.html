@@ -7630,7 +7630,7 @@ dtype: object</pre>
 <span class="c1"># Füge die Spalte "Preis" hinzu und setze die Werte auf 0</span>
 <span class="n">df_besucher</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s1">'Preis'</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
 
-<span class="c1"># Füge die Spalte "Ausreißer" in df_besucher hinzu und setze die Werte auf False</span>
+<span class="c1"># Füge die Spalte "Ausreißer" hinzu und setze die Werte auf False</span>
 <span class="n">df_besucher</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="s1">'Ausreißer'</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -7807,7 +7807,7 @@ dtype: object</pre>
 </div>
 </div>
 </div>
-</div></div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noInput" id="cell-id=6344fbde-0ac1-444e-971e-52e99c9eb7b0">
+</div></div></section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noInput" id="cell-id=6344fbde-0ac1-444e-971e-52e99c9eb7b0">
 <div class="jp-Cell-outputWrapper">
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
@@ -7893,7 +7893,7 @@ dtype: object</pre>
 </div>
 </div>
 </div>
-</div></div></section><section>
+</div></section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=30700f65-9a5d-458e-bc90-a0a609e49365">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -7922,7 +7922,7 @@ dtype: object</pre>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child">
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Der Modus ist 1.0
+<pre>Der Modus ist 1.0.
 </pre>
 </div>
 </div>
@@ -7971,17 +7971,18 @@ dtype: object</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<div class="highlight"><pre><span></span><span class="c1"># Berechnung von Q1 (25. Perzentil), Q3 (75. Perzentil) und IQR</span>
-<span class="n">Q1</span> <span class="o">=</span> <span class="n">df_kunden</span><span class="p">[</span><span class="s1">'Einkommen'</span><span class="p">]</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="mf">0.25</span><span class="p">)</span>
-<span class="n">Q3</span> <span class="o">=</span> <span class="n">df_kunden</span><span class="p">[</span><span class="s1">'Einkommen'</span><span class="p">]</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="mf">0.75</span><span class="p">)</span>
-<span class="n">IQR</span> <span class="o">=</span> <span class="n">Q3</span> <span class="o">-</span> <span class="n">Q1</span>
+<div class="highlight"><pre><span></span><span class="c1"># Einkommen:</span>
+<span class="c1"># Berechnung von eink_Q1 (25. Perzentil), eink_Q3 (75. Perzentil) und eink_IQR</span>
+<span class="n">eink_Q1</span> <span class="o">=</span> <span class="n">df_kunden</span><span class="p">[</span><span class="s1">'Einkommen'</span><span class="p">]</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="mf">0.25</span><span class="p">)</span>
+<span class="n">eink_Q3</span> <span class="o">=</span> <span class="n">df_kunden</span><span class="p">[</span><span class="s1">'Einkommen'</span><span class="p">]</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="mf">0.75</span><span class="p">)</span>
+<span class="n">eink_IQR</span> <span class="o">=</span> <span class="n">eink_Q3</span> <span class="o">-</span> <span class="n">eink_Q1</span>
 
 <span class="c1"># Berechnung der Ausreißer-Grenzen</span>
-<span class="n">untere_grenze</span> <span class="o">=</span> <span class="n">Q1</span> <span class="o">-</span> <span class="mf">1.5</span> <span class="o">*</span> <span class="n">IQR</span>
-<span class="n">obere_grenze</span> <span class="o">=</span> <span class="n">Q3</span> <span class="o">+</span> <span class="mf">1.5</span> <span class="o">*</span> <span class="n">IQR</span>
+<span class="n">eink_untere_grenze</span> <span class="o">=</span> <span class="n">eink_Q1</span> <span class="o">-</span> <span class="mf">1.5</span> <span class="o">*</span> <span class="n">eink_IQR</span>
+<span class="n">eink_obere_grenze</span> <span class="o">=</span> <span class="n">eink_Q3</span> <span class="o">+</span> <span class="mf">1.5</span> <span class="o">*</span> <span class="n">eink_IQR</span>
 
 <span class="c1"># Identifizierung von Ausreißern</span>
-<span class="n">df_kunden</span><span class="p">[</span><span class="s1">'Ausreißer'</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">df_kunden</span><span class="p">[</span><span class="s1">'Einkommen'</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">untere_grenze</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">df_kunden</span><span class="p">[</span><span class="s1">'Einkommen'</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">obere_grenze</span><span class="p">)</span>
+<span class="n">df_kunden</span><span class="p">[</span><span class="s1">'Ausreißer'</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">df_kunden</span><span class="p">[</span><span class="s1">'Einkommen'</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">eink_untere_grenze</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">df_kunden</span><span class="p">[</span><span class="s1">'Einkommen'</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">eink_obere_grenze</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -7993,7 +7994,7 @@ dtype: object</pre>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <div class="highlight"><pre><span></span><span class="c1"># Berechne den Median für die Werte in der Spalte "Einkommen"</span>
-<span class="n">eink_medianwert</span> <span class="o">=</span> <span class="n">df_kunden</span><span class="p">[</span><span class="s1">'Einkommen'</span><span class="p">]</span><span class="o">.</span><span class="n">median</span><span class="p">()</span>
+<span class="n">eink_median</span> <span class="o">=</span> <span class="n">df_kunden</span><span class="p">[</span><span class="s1">'Einkommen'</span><span class="p">]</span><span class="o">.</span><span class="n">median</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -8005,7 +8006,7 @@ dtype: object</pre>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child">
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Der Median ist 59013.0
+<pre>Der Median ist 59013.00 EUR.
 </pre>
 </div>
 </div>
@@ -8018,7 +8019,66 @@ dtype: object</pre>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <div class="highlight"><pre><span></span><span class="c1"># Ersetze extreme Werte mit dem Median der Spalte "Einkommen"</span>
-<span class="n">df_kunden</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df_kunden</span><span class="p">[</span><span class="s1">'Ausreißer'</span><span class="p">]</span> <span class="o">==</span> <span class="kc">True</span><span class="p">,</span> <span class="s1">'Einkommen'</span><span class="p">]</span> <span class="o">=</span> <span class="n">eink_medianwert</span>
+<span class="n">df_kunden</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df_kunden</span><span class="p">[</span><span class="s1">'Ausreißer'</span><span class="p">]</span> <span class="o">==</span> <span class="kc">True</span><span class="p">,</span> <span class="s1">'Einkommen'</span><span class="p">]</span> <span class="o">=</span> <span class="n">eink_median</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div></div></section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=7b7c86f1-08b8-4bd6-a7f9-3b24882a8680">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<div class="highlight"><pre><span></span><span class="c1"># Alter:</span>
+<span class="c1"># Berechnung von alt_Q1 (25. Perzentil), alt_Q3 (75. Perzentil) und alt_IQR</span>
+<span class="n">alt_Q1</span> <span class="o">=</span> <span class="n">df_kunden</span><span class="p">[</span><span class="s1">'Alter'</span><span class="p">]</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="mf">0.25</span><span class="p">)</span>
+<span class="n">alt_Q3</span> <span class="o">=</span> <span class="n">df_kunden</span><span class="p">[</span><span class="s1">'Alter'</span><span class="p">]</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="mf">0.75</span><span class="p">)</span>
+<span class="n">alt_IQR</span> <span class="o">=</span> <span class="n">alt_Q3</span> <span class="o">-</span> <span class="n">alt_Q1</span>
+
+<span class="c1"># Berechnung der Ausreißer-Grenzen</span>
+<span class="n">alt_untere_grenze</span> <span class="o">=</span> <span class="n">alt_Q1</span> <span class="o">-</span> <span class="mf">1.5</span> <span class="o">*</span> <span class="n">alt_IQR</span>
+<span class="n">alt_obere_grenze</span> <span class="o">=</span> <span class="n">alt_Q3</span> <span class="o">+</span> <span class="mf">1.5</span> <span class="o">*</span> <span class="n">alt_IQR</span>
+
+<span class="c1"># Identifizierung von Ausreißern</span>
+<span class="n">df_kunden</span><span class="p">[</span><span class="s1">'Ausreißer'</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">df_kunden</span><span class="p">[</span><span class="s1">'Alter'</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">alt_untere_grenze</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">df_kunden</span><span class="p">[</span><span class="s1">'Alter'</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">alt_obere_grenze</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div></section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=7d190b5e-1033-49a1-a239-950ca2f24d91">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<div class="highlight"><pre><span></span><span class="c1"># Berechne den Median für die Werte in der Spalte "Alter"</span>
+<span class="n">alt_median</span> <span class="o">=</span> <span class="n">df_kunden</span><span class="p">[</span><span class="s1">'Alter'</span><span class="p">]</span><span class="o">.</span><span class="n">median</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noInput" id="cell-id=20dc65e9-1868-4b1f-be97-909d2ab02eee">
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Der Median ist 51.00 Jahre.
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=4cbf8286-3086-4681-b6c0-2d5a40700750">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<div class="highlight"><pre><span></span><span class="c1"># Ersetze extreme Werte mit dem Median der Spalte "Alter"</span>
+<span class="n">df_kunden</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df_kunden</span><span class="p">[</span><span class="s1">'Ausreißer'</span><span class="p">]</span> <span class="o">==</span> <span class="kc">True</span><span class="p">,</span> <span class="s1">'Alter'</span><span class="p">]</span> <span class="o">=</span> <span class="n">alt_median</span>
 </pre></div>
 </div>
 </div>
@@ -8102,7 +8162,7 @@ dtype: object</pre>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child">
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Anzahl der verkauften Autos: 1104
+<pre>Anzahl der verkauften Autos: 1104 Stk.
 </pre>
 </div>
 </div>
@@ -8143,9 +8203,9 @@ dtype: object</pre>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child">
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Höchster Verkaufspreis:    165482.31 €
-Niedrigster Verkaufspreis: 21471.65 €
-Durchschnittspreis:        88975.2 €
+<pre>Höchster Verkaufspreis:   165482.31 EUR
+Niedrigster Verkaufspreis: 21471.65 EUR
+Durchschnittspreis:        88975.20 EUR
 </pre>
 </div>
 </div>
@@ -8180,7 +8240,7 @@ Durchschnittspreis:        88975.2 €
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child">
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Gesamtumsatz:              98228619.38 €
+<pre>Gesamtumsatz: 98228619.38 EUR
 </pre>
 </div>
 </div>
@@ -8218,7 +8278,7 @@ Durchschnittspreis:        88975.2 €
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child">
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Anzahl der Verkäufe pro Bundesland:
+<pre>Anzahl der Verkäufe pro Bundesland in EUR:
 Niederlassung
 Baden-Württemberg      205
 Bayern                 188
@@ -8269,7 +8329,7 @@ Name: count, dtype: int64
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child">
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Durchschnittlicher Umsatz pro Niederlassung:
+<pre>Durchschnittlicher Umsatz pro Bundesland in EUR:
 Niederlassung
 Baden-Württemberg       90969.56
 Bayern                  89344.31
@@ -8298,7 +8358,35 @@ Name: Preis, dtype: float64
 </div>
 </div>
 </div>
-</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput" id="cell-id=82fc7370-a4bc-428b-bc06-eb2983b5d56a">
+</div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=f6e2b2e8-b06d-4c7d-a2df-1cecde142f9c">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<div class="highlight"><pre><span></span><span class="c1"># Ermittlung der höchsten Verkaufspreise für jedes Bundesland</span>
+<span class="n">max_pro_niederl</span> <span class="o">=</span> <span class="n">df_verk</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">'Niederlassung'</span><span class="p">)[</span><span class="s1">'Preis'</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+
+<span class="c1"># Finden des Bundeslandes mit dem höchsten Verkaufspreis</span>
+<span class="n">max_niederl</span> <span class="o">=</span> <span class="n">max_pro_niederl</span><span class="o">.</span><span class="n">idxmax</span><span class="p">()</span>
+<span class="n">max_preis</span> <span class="o">=</span> <span class="n">max_pro_niederl</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div></div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noInput" id="cell-id=7ac62089-65ec-4eab-b970-f9f97f6968d8">
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Das Bundesland mit dem höchsten Verkaufspreis ist Niedersachsen mit einem Preis von 165482.31 EUR.
+</pre>
+</div>
+</div>
+</div>
+</div>
 </div></div></section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=98229e30-1f93-4532-a296-67e9d122d32c">
 <div class="jp-Cell-inputWrapper" tabindex="0">
@@ -8309,7 +8397,36 @@ Name: Preis, dtype: float64
 </div>
 </div>
 </div>
-</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput" id="cell-id=9492343e-716b-485c-8d27-022801376451">
+</div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=541714b5-8e39-4835-9ca0-79f3f125b907">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<div class="highlight"><pre><span></span><span class="c1"># Ermittlung der Anzahl der Verkäufe pro Geschlecht</span>
+<span class="n">verk_pro_geschl</span> <span class="o">=</span> <span class="n">df_verk</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">'Geschlecht'</span><span class="p">)[</span><span class="s1">'Geschlecht'</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+
+<span class="c1"># Finden des Geschlechts mit den meisten Käufen</span>
+<span class="n">max_geschl</span> <span class="o">=</span> <span class="s1">'Männer'</span> <span class="k">if</span> <span class="n">verk_pro_geschl</span><span class="o">.</span><span class="n">idxmax</span><span class="p">()</span> <span class="k">else</span> <span class="s1">'Frauen'</span>
+<span class="n">max_verk</span> <span class="o">=</span> <span class="n">verk_pro_geschl</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div></div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noInput" id="cell-id=4ab39d08-6223-4ccf-89e1-1705e2174dbf">
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Die meisten Autos wurden von Männern gekauft,
+sie haben 706 Autos gekauft.
+</pre>
+</div>
+</div>
+</div>
+</div>
 </div></div></section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=a99c59e8-bd73-4d3f-9645-83cec40c1d13">
 <div class="jp-Cell-inputWrapper" tabindex="0">
@@ -8320,7 +8437,33 @@ Name: Preis, dtype: float64
 </div>
 </div>
 </div>
-</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput" id="cell-id=ee032aa1-7a7b-4fa0-b01b-525e2f360d2b">
+</div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=64cdfda9-94b9-4f77-8c02-e2bdfaa0cd07">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<div class="highlight"><pre><span></span><span class="c1"># Berechnung des Durchschnittsalters für Kunden und Besucher</span>
+<span class="n">mittel_alt_kunden</span> <span class="o">=</span> <span class="n">df_gesamt</span><span class="p">[</span><span class="n">df_gesamt</span><span class="p">[</span><span class="s1">'Kunde'</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">][</span><span class="s1">'Alter'</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">mittel_alt_besucher</span> <span class="o">=</span> <span class="n">df_gesamt</span><span class="p">[</span><span class="n">df_gesamt</span><span class="p">[</span><span class="s1">'Kunde'</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">][</span><span class="s1">'Alter'</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div></div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noInput" id="cell-id=47418d78-f9c6-4438-86ca-ff4bf0d1afe1">
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Das Durchschnittsalter der Kunden ist 50.38 Jahre.
+Das Durchschnittsalter der Besucher ist 49.88 Jahre.
+</pre>
+</div>
+</div>
+</div>
+</div>
 </div></div></section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=e487320d-6977-4c15-97d4-e767fde6ddaa">
 <div class="jp-Cell-inputWrapper" tabindex="0">
@@ -8331,7 +8474,38 @@ Name: Preis, dtype: float64
 </div>
 </div>
 </div>
-</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput" id="cell-id=104ea698-3d44-4226-aae5-a160c7ec4344">
+</div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=df371127-0fa0-46e3-b6aa-7e8e54fd9d5e">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<div class="highlight"><pre><span></span><span class="c1"># Filter nach Einkommen der Kunden</span>
+<span class="n">eink_kunden</span> <span class="o">=</span> <span class="n">df_gesamt</span><span class="p">[</span><span class="n">df_gesamt</span><span class="p">[</span><span class="s1">'Kunde'</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">][</span><span class="s1">'Einkommen'</span><span class="p">]</span>
+<span class="c1"># Filter nach Einkommen der Besucher</span>
+<span class="n">eink_besucher</span> <span class="o">=</span> <span class="n">df_gesamt</span><span class="p">[</span><span class="n">df_gesamt</span><span class="p">[</span><span class="s1">'Kunde'</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">][</span><span class="s1">'Einkommen'</span><span class="p">]</span>
+
+<span class="c1"># Berechnung der Durchschnittseinkommen für Kunden und Besucher</span>
+<span class="n">mittel_eink_kunden</span> <span class="o">=</span> <span class="n">eink_kunden</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">mittel_eink_besucher</span> <span class="o">=</span> <span class="n">eink_besucher</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div></div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noInput" id="cell-id=96812017-2995-4126-a612-25430a1e9720">
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Das Durchschnittseinkommen der Kunden ist 58850.91 EUR.
+Das Durchschnittseinkommen der Besucher ist 59367.94 EUR.
+</pre>
+</div>
+</div>
+</div>
+</div>
 </div></div></section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=307897f6-ccf6-4909-bf95-7eff13ad19e2">
 <div class="jp-Cell-inputWrapper" tabindex="0">
@@ -8342,7 +8516,57 @@ Name: Preis, dtype: float64
 </div>
 </div>
 </div>
-</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput" id="cell-id=e3134948-5522-46ed-bd5e-66a71d78ebe8">
+</div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=45d54ebf-40c1-440d-a729-725c8a5abb49">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Nullhypothese (H0​): Es gibt keinen Unterschied zwischen dem Durchschnittseinkommen der Kunden und der Besucher. (μKunden=μBesucher)<br/>
+Alternativhypothese (H1​): Es gibt einen Unterschied zwischen dem Durchschnittseinkommen der Kunden und der Besucher. (μKunden≠μBesucher​)<br/>
+Wir verwenden ein Signifikanzniveau (α) von 5%.</p>
+</div>
+</div>
+</div>
+</div></div></section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=31bad0c9-2a01-47b2-baf1-51e78930ee1a">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<div class="highlight"><pre><span></span><span class="c1"># Zweistichproben-t-Test durchführen, unter der Annahme, dass die Varianzen gleich sind</span>
+<span class="n">t_stat</span><span class="p">,</span> <span class="n">p_value</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">ttest_ind</span><span class="p">(</span><span class="n">eink_kunden</span><span class="p">,</span> <span class="n">eink_besucher</span><span class="p">,</span> <span class="n">equal_var</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'''Ergebnisse des Zweistichproben-t-Tests:</span>
+<span class="s1">t-Statistik: </span><span class="si">{</span><span class="n">t_stat</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span>
+<span class="s1">p-Wert: </span><span class="si">{</span><span class="n">p_value</span><span class="si">:</span><span class="s1">.5f</span><span class="si">}</span><span class="s1">'''</span><span class="p">)</span>
+
+<span class="c1"># Entscheidung basierend auf dem p-Wert</span>
+<span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.05</span>
+<span class="k">if</span> <span class="n">p_value</span> <span class="o">&lt;</span> <span class="n">alpha</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">'Es gibt einen statistisch signifikanten Unterschied zwischen dem Durchschnittseinkommen der Kunden und dem der Besucher.'</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">'Es gibt keinen statistisch signifikanten Unterschied zwischen dem Durchschnittseinkommen der Kunden und dem der Besucher.'</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noInput" id="cell-id=963ba6df-c85a-468b-850c-34a4cdba69d7">
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Ergebnisse des Zweistichproben-t-Tests:
+t-Statistik: -0.70
+p-Wert: 0.48183
+Es gibt keinen statistisch signifikanten Unterschied zwischen dem Durchschnittseinkommen der Kunden und dem der Besucher.
+</pre>
+</div>
+</div>
+</div>
+</div>
 </div></div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=eb5c8d98-9906-4fa1-bf2c-48b8d94dd59e">
 <div class="jp-Cell-inputWrapper" tabindex="0">
