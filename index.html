@@ -7807,7 +7807,7 @@ dtype: object</pre>
 </div>
 </div>
 </div>
-</div></div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noInput" id="cell-id=6344fbde-0ac1-444e-971e-52e99c9eb7b0">
+</div></div></section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noInput" id="cell-id=6344fbde-0ac1-444e-971e-52e99c9eb7b0">
 <div class="jp-Cell-outputWrapper">
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
@@ -7893,7 +7893,7 @@ dtype: object</pre>
 </div>
 </div>
 </div>
-</div></div></section><section>
+</div></section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=30700f65-9a5d-458e-bc90-a0a609e49365">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -8054,8 +8054,6 @@ dtype: object</pre>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <div class="highlight"><pre><span></span><span class="c1"># Berechne den Median für die Werte in der Spalte "Alter"</span>
 <span class="n">alt_median</span> <span class="o">=</span> <span class="n">df_kunden</span><span class="p">[</span><span class="s1">'Alter'</span><span class="p">]</span><span class="o">.</span><span class="n">median</span><span class="p">()</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'Der Median ist </span><span class="si">{</span><span class="n">alt_median</span><span class="si">}</span><span class="s1">.'</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -8422,7 +8420,8 @@ Name: Preis, dtype: float64
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child">
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Die meisten Autos wurden von Männern gekauft, sie haben 706 Autos gekauft.
+<pre>Die meisten Autos wurden von Männern gekauft,
+sie haben 706 Autos gekauft.
 </pre>
 </div>
 </div>
@@ -8481,17 +8480,18 @@ Das Durchschnittsalter der Besucher ist 49.88 Jahre.
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<div class="highlight"><pre><span></span><span class="c1"># Berechnung der Durchschnittseinkommen für Kunden und Besucher</span>
-<span class="n">mittel_eink_kunden</span> <span class="o">=</span> <span class="n">df_gesamt</span><span class="p">[</span><span class="n">df_gesamt</span><span class="p">[</span><span class="s1">'Kunde'</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">][</span><span class="s1">'Einkommen'</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
-<span class="n">mittel_eink_besucher</span> <span class="o">=</span> <span class="n">df_gesamt</span><span class="p">[</span><span class="n">df_gesamt</span><span class="p">[</span><span class="s1">'Kunde'</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">][</span><span class="s1">'Einkommen'</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<div class="highlight"><pre><span></span><span class="c1"># Filter nach Einkommen der Kunden</span>
+<span class="n">eink_kunden</span> <span class="o">=</span> <span class="n">df_gesamt</span><span class="p">[</span><span class="n">df_gesamt</span><span class="p">[</span><span class="s1">'Kunde'</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">][</span><span class="s1">'Einkommen'</span><span class="p">]</span>
+<span class="c1"># Filter nach Einkommen der Besucher</span>
+<span class="n">eink_besucher</span> <span class="o">=</span> <span class="n">df_gesamt</span><span class="p">[</span><span class="n">df_gesamt</span><span class="p">[</span><span class="s1">'Kunde'</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">][</span><span class="s1">'Einkommen'</span><span class="p">]</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'''Das Durchschnittseinkommen der Kunden ist </span><span class="si">{</span><span class="n">mittel_eink_kunden</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1"> EUR.</span>
-<span class="s1">Das Durchschnittseinkommen der Besucher ist </span><span class="si">{</span><span class="n">mittel_eink_besucher</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1"> EUR.'''</span><span class="p">)</span>
+<span class="c1"># Berechnung der Durchschnittseinkommen für Kunden und Besucher</span>
+<span class="n">mittel_eink_kunden</span> <span class="o">=</span> <span class="n">eink_kunden</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">mittel_eink_besucher</span> <span class="o">=</span> <span class="n">eink_besucher</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 </div>
-</div></div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput" id="cell-id=868041d1-47b1-4f63-9e9f-7d9bfd64fcd6">
 </div></div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noInput" id="cell-id=96812017-2995-4126-a612-25430a1e9720">
 <div class="jp-Cell-outputWrapper">
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
