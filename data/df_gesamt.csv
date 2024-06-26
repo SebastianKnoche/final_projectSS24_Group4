@@ -586,7 +586,7 @@ Alter,Einkommen,Preis,Geschlecht,Zeit,KundeNr,Ausreißer,Kunde,Niederlassung
 31,24167.813958101447,0.0,1,41.0,K1756,False,0,Niedersachsen
 46,47676.39503820558,0.0,1,55.0,K1299,False,0,Bayern
 39,40081.01700884192,0.0,0,53.0,K1865,False,0,Nordrhein-Westfalen
-63,84772.48084731762,0.0,1,30.0,K1973,False,0,Düsseldorf
+63,84772.48084731762,0.0,1,30.0,K1973,False,0,Nordrhein-Westfalen
 30,21238.02542225393,0.0,1,30.0,K1608,False,0,Berlin
 54,53423.91068717487,0.0,0,36.0,K1966,False,0,Hamburg
 49,55265.13374235362,0.0,1,57.0,K1846,False,0,Baden-Württemberg
@@ -1471,7 +1471,7 @@ Alter,Einkommen,Preis,Geschlecht,Zeit,KundeNr,Ausreißer,Kunde,Niederlassung
 59,65278.0,91121.52,1,42.0,K0831,False,1,Nordrhein-Westfalen
 47,46708.0,70719.18,1,31.0,K1006,False,1,Nordrhein-Westfalen
 48,47062.0,79825.38,0,34.0,K0376,False,1,Baden-Württemberg
-55,66738.0,120215.5,1,52.0,K0413,False,1,Düsseldorf
+55,66738.0,120215.5,1,52.0,K0413,False,1,Nordrhein-Westfalen
 54,56229.0,97038.57,0,40.0,K0075,False,1,Nordrhein-Westfalen
 69,76330.0,120784.01,1,47.0,K1033,False,1,Sachsen
 42,53660.0,77862.18,1,37.0,K0501,False,1,Bayern
